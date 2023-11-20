@@ -1,4 +1,11 @@
-
+<?php
+$firstname = $_POST['user_firstname'];
+$lastname = $_POST['user_lastname'];
+$subject = $_POST['user_subject'];
+$email = $_POST['user_email'];
+$phone = $_POST['user_number'];
+$message = $_POST['user_message'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,13 +15,11 @@
    <title>Document</title>
 </head>
 <body>
+   <h1>Merci <?= $firstname ?> <?= $lastname ?> de nous avoir contacté à propos de “<?= $subject ?>”.</h1>
    <p>
-   <?php
-   echo  "Merci " . $_POST['user_firstname'] ." ". $_POST['user_lastname'] . " de nous avoir contacté à propos de " . $_POST['user_subject'] . nl2br("." . PHP_EOL)
-   . "Un de nos conseillers vous contactera soit à l’adresse " . $_POST['user_email']. " ou par téléphone au " .
-   $_POST['user_number'] . " dans les plus brefs délais pour traiter votre demande : "
-      . $_POST['user_message'];
-   ?>
+   Un de nos conseillers vous contactera soit à l’adresse <?= $email ?> ou par téléphone au <?= $phone ?> dans les plus brefs délais pour traiter votre demande : 
+
+   <?= $message ?>
    </p>
 </body>
 </html>
